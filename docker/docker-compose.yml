@@ -37,7 +37,7 @@ services:
         hard: -1
 
   oap:
-    image: ${OAP_IMAGE}
+    image: apache/skywalking-oap-server
     container_name: oap
     depends_on:
       elasticsearch:
@@ -61,7 +61,7 @@ services:
       JAVA_OPTS: "-Xms2048m -Xmx2048m"
 
   ui:
-    image: ${UI_IMAGE}
+    image: apache/skywalking-ui
     container_name: ui
     depends_on:
       oap:
